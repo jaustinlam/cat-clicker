@@ -1,0 +1,23 @@
+#cat-img{
+    height: 200px;
+    width: 200px;
+    margin: auto;
+    display: block;
+
+}
+#title{
+    text-align: center;
+}
+
+body{
+    background-color: #ce93d8;
+}
+
+.cat-col{
+    background-color: white;
+}
+
+#score{
+    text-align: center;
+    font-size: 80pt;
+}
