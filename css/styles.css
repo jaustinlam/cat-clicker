@@ -1,23 +1,41 @@
-#cat-img{
-    height: 200px;
-    width: 200px;
-    margin: auto;
-    display: block;
-
-}
-#title{
-    text-align: center;
-}
-
+/*ELements*/
 body{
     background-color: #ce93d8;
 }
 
+/*Classes*/
+.cat-img{
+    height: 400px;
+    width: 400px;
+    margin: auto;
+    display: block;
+
+}
 .cat-col{
     background-color: white;
 }
+.catName{
+    text-align: center;
+    color: white;
+}
+.active{
+    font-weight: bold;
+}
 
+/*ID's*/
+
+#title{
+    text-align: center;
+}
 #score{
     text-align: center;
     font-size: 80pt;
+}
+#cat-list{
+    background-color: white;
+    height: 100%;
+    font-size: 20pt;
+}
+#pageHead{
+    font-family: 'Monoton', cursive;
 }
