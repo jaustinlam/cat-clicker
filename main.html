@@ -25,7 +25,7 @@
                 </ul>
             </div>
             <div id="cat-pics" class="col s8">
-                <h2 class="catName" id="cat-name">Hello</h2>
+                <h2 class="catName" id="cat-name"></h2>
                 <img class='cat-img responsive-img' id='cat-img' src=''>
             </div>
 
@@ -36,6 +36,36 @@
                 <h3 class="purple-text" id="title">Cuteness Score</h3>
                 <h1 id="score">0</h1>
             </div>
+        </div>
+        <div class="row" id="admin-mode">
+            <div class='col s12 button-col'>
+                <a class="waves-effect waves-light btn purple darken-1" id="admin-button">admin</a>
+            </div>
+            <form class='col s12' id="admin-form">
+                <div class='row'>
+                    <div class='input-field col s6'>
+                        <input id="form-name" type="text" class='validate'>
+                        <label class="active" for="form-name">Name</label>
+                    </div>
+                    <div class='input-field col s6'>
+                        <input id="form-image" type="text" class="validate">
+                        <label class="active" for="form-image">Image URL</label>
+                    </div>
+                    <div class='input-field col s6'>
+                        <input id="form-clicks" type="text" class="validate">
+                        <label class="active" for="form-clicks">Clicks</label>
+                    </div>
+                    <div class='col s6'>
+                        <a class="btn waves-effect waves-light red" id="cancel-button">   Cancel
+                            <i class="material-icons right">clear</i>
+                        </a>
+                        <button class="btn waves-effect waves-light" type="submit">Submit
+                            <i class="material-icons right">send</i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+
         </div>
 
 

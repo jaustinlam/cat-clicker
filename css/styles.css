@@ -21,7 +21,12 @@ body{
 .active{
     font-weight: bold;
 }
-
+.input-field {
+     background-color: white;
+   }
+.button-col{
+    margin-bottom: 10px;
+}
 /*ID's*/
 
 #title{
@@ -39,3 +44,7 @@ body{
 #pageHead{
     font-family: 'Monoton', cursive;
 }
+#admin-form{
+    background-color: white;
+}
+

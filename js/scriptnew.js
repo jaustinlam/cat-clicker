@@ -49,7 +49,8 @@ var octopus = {
         model.currentCat = model.cats[0];
         // initialize the views
         catView.init();
-        catListView.init()
+        catListView.init();
+        adminView.init()
 
     },
 
@@ -71,6 +72,15 @@ var octopus = {
         model.currentCat.clickcount++;
         // render the view with updated count
         catView.render();
+    },
+
+    updateCat: function(name, url, clicks) {
+        // update cat from form
+        model.currentCat.name = name;
+        model.currentCat.img = url;
+        model.currentCat.clickcount = clicks;
+        catView.render();
+        adminView.render();
     }
 };
 
@@ -87,6 +97,7 @@ var catView = {
         // on click event listener to increment count for cat
         this.catImageElem.on('click', function(){
             octopus.incrementCatCount();
+            adminView.render();
         });
 
         // render the view with updated values
@@ -100,7 +111,6 @@ var catView = {
         this.countElem.text(thisCat.clickcount);
         this.catNameElem.text(thisCat.name);
         this.catImageElem.attr('src', thisCat.img);
-        console.log(thisCat.name);
     }
 };
 
@@ -135,6 +145,7 @@ var catListView = {
                     $(this).addClass('active');
                     octopus.setCurrentCat(catCopy);
                     catView.render();
+                    adminView.render();
                 };
             })(cat));
 
@@ -142,6 +153,44 @@ var catListView = {
             this.catListElem.append(elem);
         }
     }
+};
+
+var adminView = {
+    init: function(){
+        adminElem = $("#admin-mode");
+        adminForm = $("#admin-form");
+        adminButton = $("#admin-button");
+        cancelButton = $("#cancel-button");
+        formCatName = $("#form-name");
+        formCatImg = $("#form-image");
+        formCatClicks = $("#form-clicks");
+
+        adminButton.on('click', function(){
+            adminForm.show();
+        });
+        cancelButton.on('click', function(){
+            adminForm.hide();
+        });
+
+        this.render();
+    },
+
+    render: function(){
+        adminForm.hide();
+        var thisCat = octopus.getCurrentCat();
+        formCatName.attr('value', thisCat.name);
+        formCatImg.attr('value', thisCat.img);
+        formCatClicks.attr('value', thisCat.clickcount);
+        adminForm.submit(function(){
+            octopus.updateCat(formCatName.val(), formCatImg.val(), formCatClicks.val());
+            return false;
+
+        });
+
+
+
+    }
+
 };
 
 // run the script
